@@ -1,10 +1,10 @@
 buildscript {
     repositories {
-        maven { url "http://repo.spring.io/libs-snapshot" }
+        maven { url "http://repo.spring.io/libs-milestone" }
         mavenLocal()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:0.5.0.M6")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.0.0.RELEASE")
     }
 }
 
@@ -17,19 +17,19 @@ version = '1.0'
 compileJava.options.encoding = 'UTF-8'
 
 jar {
-    baseName = 'gs-spring-boot'
+    baseName = 'gs-serving-web-content'
     version =  '0.1.0'
 }
 
 repositories {
     mavenCentral()
-    maven { url "http://repo.spring.io/libs-snapshot" }
+    maven { url "http://repo.spring.io/libs-milestone" }
 }
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web:0.5.0.M6")
-    testCompile("junit:junit:4.11")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.thymeleaf:thymeleaf-spring4")
 
-    compile 'org.jsoup:jsoup:1.7.3'
-    compile 'joda-time:joda-time:2.3'
+    testCompile("junit:junit")
 }
