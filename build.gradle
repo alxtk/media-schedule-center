@@ -30,6 +30,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.thymeleaf:thymeleaf-spring4")
+    compile("uk.co.caprica:vlcj:3.0.1")
 
     testCompile("junit:junit")
 }
