@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
 @EnableWebSecurity
@@ -13,9 +15,15 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
         "com.mediaserver",
         "com.mediaserver.config",
         "com.mediaserver.controller"})
-public class WebConfig {
+public class WebConfig extends WebMvcConfigurerAdapter {
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(WebConfig.class, args);
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+        registry.addResourceHandler("/public/**").addResourceLocations("classpath:/META-INF/resources/public/");
     }
 }
