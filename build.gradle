@@ -31,7 +31,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.boot:spring-boot-starter-security")
     compile("org.thymeleaf:thymeleaf-spring4")
-    compile("net.jangaroo.com.sencha:ext-js:3.4.1.1")
+    compile("org.webjars:extjs:4.2.0")
     compile("org.webjars:bootstrap:3.0.0")
     compile("uk.co.caprica:vlcj:3.0.1")
     compile("org.apache.ftpserver:ftpserver:1.0.6")
