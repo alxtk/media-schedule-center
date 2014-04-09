@@ -1,5 +1,7 @@
 buildscript {
     repositories {
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
         maven { url "http://repo.spring.io/libs-milestone" }
         mavenLocal()
     }
@@ -18,12 +20,16 @@ compileJava.options.encoding = 'UTF-8'
 
 jar {
     baseName = 'gs-serving-web-content'
-    version =  '0.1.0'
+    version = '0.1.0'
 }
 
 repositories {
     mavenCentral()
-    maven { url "http://repo.spring.io/libs-milestone" }
+    maven { url "http://repo.spring.io/snapshot" }
+    maven { url "http://repo.spring.io/milestone" }
+    maven {
+        url "http://repo.spring.io/libs-milestone"
+    }
 }
 
 dependencies {
