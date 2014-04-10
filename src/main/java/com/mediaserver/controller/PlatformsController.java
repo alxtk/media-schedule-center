@@ -21,7 +21,7 @@ public class PlatformsController {
         return "platforms";
     }
 
-    @RequestMapping(value = "create/", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Platform create(@RequestBody Platform smartphone) {
         return platformService.create(smartphone);

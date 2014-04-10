@@ -14,7 +14,7 @@ import javax.swing.*;
  */
 public class VlcStreamPlayer {
 
-    public static final String MEDIA_FILE = "http://" + VlcStreamer.STREAM_HOST + ":" + VlcStreamer.STREAM_IP;
+    public static final String MEDIA_FILE = "rtp://" + VlcStreamer.STREAM_HOST + ":" + VlcStreamer.STREAM_IP;
     private final EmbeddedMediaPlayerComponent mediaPlayerComponent;
 
     private VlcStreamPlayer(String mediaFile) {

@@ -23,7 +23,7 @@ Ext.onReady(function() {
         model: 'Platform',
         proxy: {
             type: 'rest',
-            url: 'Platforms',
+            //url: 'Platforms',
             format: 'json',
             headers: {
                 'Content-Type': 'application/json'
@@ -91,8 +91,8 @@ Ext.onReady(function() {
                 iconCls: 'icon-add',
                 handler: function() {
                     // empty record
-                    store.insert(0, new Product());
-                    rowEditing.startEdit(0, 0);
+                    store.insert(store.data.length, new Platform());
+                    rowEditing.startEdit(store.data.length - 1, 0);
                 }
             }, '-', {
                 text: 'Delete',

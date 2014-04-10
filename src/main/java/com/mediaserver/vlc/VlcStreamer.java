@@ -6,6 +6,8 @@ import com.sun.jna.NativeLibrary;
 import uk.co.caprica.vlcj.binding.LibVlc;
 import uk.co.caprica.vlcj.player.MediaPlayerFactory;
 import uk.co.caprica.vlcj.player.headless.HeadlessMediaPlayer;
+import uk.co.caprica.vlcj.player.list.MediaListPlayer;
+import uk.co.caprica.vlcj.player.list.MediaListPlayerMode;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
 /**
@@ -41,7 +43,9 @@ public class VlcStreamer {
 
         MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory(args);
         HeadlessMediaPlayer mediaPlayer = mediaPlayerFactory.newHeadlessMediaPlayer();
-
+        MediaListPlayer mediaListPlayer = mediaPlayerFactory.newMediaListPlayer();
+        mediaListPlayer.setMode(MediaListPlayerMode.LOOP);
+        mediaListPlayer.setMediaPlayer(mediaPlayer);
 
         mediaPlayer.playMedia(media, options, " :input-repeat=-1");
         //mediaPlayer.setRepeat(true);
