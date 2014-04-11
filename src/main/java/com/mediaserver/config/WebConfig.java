@@ -29,19 +29,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");;
+        registry.addResourceHandler("/webjars*//**").addResourceLocations("classpath:/META-INF/resources/webjars/");;
     }
-
-    /*
-    @Bean
-    public ViewResolver getViewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setViewClass(JstlView.class);
-        viewResolver.setPrefix(propertyResolver.getProperty("spring.view.prefix"));
-        viewResolver.setSuffix(propertyResolver.getProperty("spring.view.suffix"));
-        viewResolver.setOrder(1);
-        return viewResolver;
-    }*/
-
 
 }

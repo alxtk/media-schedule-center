@@ -27,20 +27,18 @@ repositories {
     mavenCentral()
     maven { url "http://repo.spring.io/snapshot" }
     maven { url "http://repo.spring.io/milestone" }
-    maven {
-        url "http://repo.spring.io/libs-milestone"
-    }
+    maven { url "http://repo.spring.io/libs-milestone" }
 }
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-parent")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.boot:spring-boot-starter-security")
-    //compile("org.thymeleaf:thymeleaf-spring4")
-    compile("javax.servlet:jstl:1.2")
-    compile("org.webjars:extjs:4.2.0")
-    compile("org.webjars:bootstrap:3.0.0")
+
+    compile("javax.servlet:jstl")
+    compile("org.apache.tomcat.embed:tomcat-embed-jasper")
+    //compile("org.webjars:bootstrap:3.0.0")
     compile("uk.co.caprica:vlcj:3.0.1")
     compile("org.apache.ftpserver:ftpserver:1.0.6")
-    testCompile("junit:junit")
 }
