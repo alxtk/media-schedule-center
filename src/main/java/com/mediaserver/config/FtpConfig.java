@@ -17,8 +17,7 @@ public class FtpConfig {
     FtpServer ftpServer(UserManager userManager) {
         FtpServerFactory ftpServerFactory = new FtpServerFactory();
         ftpServerFactory.setUserManager(userManager);
-        FtpServer ftpServer = ftpServerFactory.createServer();
-        return ftpServer;
+        return ftpServerFactory.createServer();
     }
 
     @Bean
@@ -26,13 +25,10 @@ public class FtpConfig {
         return userManagerFactory.createUserManager();
     }
 
-
     @Bean
     PropertiesUserManagerFactory userManagerFactory() {
         PropertiesUserManagerFactory propertiesUserManagerFactory = new PropertiesUserManagerFactory();
         propertiesUserManagerFactory.setFile(new File("users.properties"));
         return propertiesUserManagerFactory;
     }
-
-
 }

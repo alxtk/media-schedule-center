@@ -21,4 +21,14 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("/platforms")
+    public String platforms() {
+        return "platforms";
+    }
+
+    @RequestMapping("/radio")
+    public String radio() {
+        return "radio-schedule";
+    }
+
 }

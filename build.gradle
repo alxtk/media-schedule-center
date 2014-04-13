@@ -13,13 +13,17 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'war'
 
-sourceCompatibility = 1.5
 version = '1.0'
 compileJava.options.encoding = 'UTF-8'
 
 jar {
-    baseName = 'gs-serving-web-content'
+    baseName = 'MediaCenter'
+    version = '0.1.0'
+}
+war {
+    baseName = 'MediaCenter'
     version = '0.1.0'
 }
 
@@ -27,18 +31,31 @@ repositories {
     mavenCentral()
     maven { url "http://repo.spring.io/snapshot" }
     maven { url "http://repo.spring.io/milestone" }
-    maven { url "http://repo.spring.io/libs-milestone" }
+}
+
+configurations {
+    providedRuntime
 }
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-parent")
-    compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("org.springframework.boot:spring-boot-starter-security")
+    //base mvc
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    //base security
+    compile 'org.springframework.boot:spring-boot-starter-security'
+    //enterprice features like /health /beans and so on
+    //compile("org.springframework.boot:spring-boot-starter-actuator")
 
-    compile("javax.servlet:jstl")
-    compile("org.apache.tomcat.embed:tomcat-embed-jasper")
-    //compile("org.webjars:bootstrap:3.0.0")
-    compile("uk.co.caprica:vlcj:3.0.1")
-    compile("org.apache.ftpserver:ftpserver:1.0.6")
+    //tomcat
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    //jsp in tomcat support
+    //compile 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    //vlc bindings
+    compile 'uk.co.caprica:vlcj:3.0.1'
+    //ftp server
+    compile ('org.apache.ftpserver:ftpserver:1.0.6') {
+        exclude group: 'org.slf4j'
+    }
+    //db
+    compile 'org.hsqldb:hsqldb'
+
 }
