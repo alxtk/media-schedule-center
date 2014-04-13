@@ -27,6 +27,10 @@ war {
     version = '0.1.0'
 }
 
+springBoot {
+    mainClass = "com.mediaserver.Application"
+}
+
 repositories {
     mavenCentral()
     maven { url "http://repo.spring.io/snapshot" }
@@ -48,7 +52,7 @@ dependencies {
     //tomcat
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     //jsp in tomcat support
-    //compile 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    compile 'org.apache.tomcat.embed:tomcat-embed-jasper'
     //vlc bindings
     compile 'uk.co.caprica:vlcj:3.0.1'
     //ftp server
@@ -57,5 +61,4 @@ dependencies {
     }
     //db
     compile 'org.hsqldb:hsqldb'
-
 }
