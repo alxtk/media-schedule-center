@@ -46,13 +46,14 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     //base security
     compile 'org.springframework.boot:spring-boot-starter-security'
+
     //enterprice features like /health /beans and so on
     //compile("org.springframework.boot:spring-boot-starter-actuator")
 
     //tomcat
-    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     //jsp in tomcat support
-    compile 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    providedRuntime 'org.apache.tomcat.embed:tomcat-embed-jasper'
     //vlc bindings
     compile 'uk.co.caprica:vlcj:3.0.1'
     //ftp server

@@ -31,4 +31,9 @@ public class MainController {
         return "radio-schedule";
     }
 
+    @RequestMapping("/video")
+    public String video() {
+        return "video-schedule";
+    }
+
 }
