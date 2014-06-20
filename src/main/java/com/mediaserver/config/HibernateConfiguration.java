@@ -1,17 +1,20 @@
 package com.mediaserver.config;
 
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
+@EnableTransactionManagement
 public class HibernateConfiguration {
 
     @Autowired
@@ -31,8 +34,8 @@ public class HibernateConfiguration {
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager(DataSource dataSource) throws Exception {
-        return new DataSourceTransactionManager(dataSource);
+    public PlatformTransactionManager transactionManager(SessionFactory sessionFactory) throws Exception {
+        return new HibernateTransactionManager(sessionFactory);
     }
 
 }

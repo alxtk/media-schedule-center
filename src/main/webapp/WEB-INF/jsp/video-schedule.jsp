@@ -32,13 +32,15 @@
                     <div class="col-lg-9">
                         <tabset>
                             <tab select="renderCalender(myCalendar1);">
+
                                 <tab-heading>
                                     <i class="glyphicon glyphicon-bell"></i> Calendar One
                                 </tab-heading>
-                                <div class="alert-success calAlert"
-                                     ng-show="alertMessage != undefined && alertMessage != ''">
+
+                                <div class="alert-success calAlert" ng-show="alertMessage != undefined && alertMessage != ''">
                                     <h4>{{alertMessage}}</h4>
                                 </div>
+
                                 <div class="btn-toolbar">
                                     <div class="btn-group pull-right">
                                         <button class="btn btn-success" ng-click="changeView('agendaDay', myCalendar1)">AgendaDay</button>

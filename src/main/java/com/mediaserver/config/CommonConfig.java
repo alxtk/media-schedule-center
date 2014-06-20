@@ -1,22 +1,23 @@
 package com.mediaserver.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationConfig;
+import com.mediaserver.utils.jackson.mapper.ApplicationObjectMapper;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.PropertyResolver;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-
-import javax.sql.DataSource;
 
 @Configuration
 public class CommonConfig {
 
     @Bean
-    DataSource dataSource(PropertyResolver resolver) {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(resolver.getProperty("jdbc.driverClassName"));
-        dataSource.setUrl(resolver.getProperty("jdbc.url"));
-        dataSource.setUsername(resolver.getProperty("jdbc.username"));
-        dataSource.setPassword(resolver.getProperty("jdbc.password"));
-        return dataSource;
+    public ObjectMapper jacksonObjectMapper() {
+        return new ApplicationObjectMapper();
     }
+
+    @Bean
+    public SerializationConfig serializationConfig() {
+        return jacksonObjectMapper().getSerializationConfig();
+    }
+
 }

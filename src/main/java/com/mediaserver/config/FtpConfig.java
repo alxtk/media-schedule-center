@@ -13,7 +13,7 @@ import java.io.File;
 @Configuration
 public class FtpConfig {
 
-    @Bean(initMethod = "start", destroyMethod = "stop")
+    /*@Bean(initMethod = "start", destroyMethod = "stop")
     FtpServer ftpServer(UserManager userManager) {
         FtpServerFactory ftpServerFactory = new FtpServerFactory();
         ftpServerFactory.setUserManager(userManager);
@@ -30,5 +30,5 @@ public class FtpConfig {
         PropertiesUserManagerFactory propertiesUserManagerFactory = new PropertiesUserManagerFactory();
         propertiesUserManagerFactory.setFile(new File("users.properties"));
         return propertiesUserManagerFactory;
-    }
+    }*/
 }
