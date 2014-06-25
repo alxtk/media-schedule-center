@@ -8,6 +8,7 @@
 <body>
 <a href="/platforms/">Edit platforms</a><br/>
 <a href="/radio/">Edit radio schedule</a><br/>
-<a href="/video/">Edit video schedule(starting demo)</a>
+<a href="/video/">Edit video schedule(starting demo)</a><br/>
+<a href="/file-manager">File manager</a>
 </body>
 </html>

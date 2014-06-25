@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html lang="en" ng-app="calendarDemoApp" id="top">
+<html lang="en" ng-app="scheduler" id="top">
 <head>
     <title>Calendar test</title>
     <link rel="icon" href="favicon.ico"/>

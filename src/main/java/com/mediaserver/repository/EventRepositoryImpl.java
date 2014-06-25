@@ -16,17 +16,17 @@ public class EventRepositoryImpl implements EventRepository{
 
     @Override
     @SuppressWarnings("unchecked")
-    public List<Event> getAllEvents() {
+    public List<Event> findAllEvents() {
         return sessionFactory.getCurrentSession().createCriteria(Event.class).list();
     }
 
     @Override
-    public List<Event> getEvents(LocalDateTime startDate, LocalDateTime endDate) {
+    public List<Event> findEventsBetween(LocalDateTime startDate, LocalDateTime endDate) {
         throw new UnsupportedOperationException("Not implemented yet!");
     }
 
     @Override
-    public Event getEvent(long id) {
+    public Event findEvent(long id) {
         return (Event) sessionFactory.getCurrentSession().get(Event.class, id);
     }
 
@@ -46,7 +46,7 @@ public class EventRepositoryImpl implements EventRepository{
     }
 
     @Override
-    public void deleteEventById(long id) {
+    public void deleteEvent(long id) {
         Event deleteEvent = new Event();
         deleteEvent.setId(id);
         sessionFactory.getCurrentSession().delete(deleteEvent);

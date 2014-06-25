@@ -36,4 +36,8 @@ public class MainController {
         return "video-schedule";
     }
 
+    @RequestMapping("/file-manager")
+    public String fileManager() {
+        return "content-file-manager";
+    }
 }

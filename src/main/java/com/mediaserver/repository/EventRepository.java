@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface EventRepository {
 
-    List<Event> getAllEvents();
+    List<Event> findAllEvents();
 
-    List<Event> getEvents(LocalDateTime startDate, LocalDateTime endDate);
+    List<Event> findEventsBetween(LocalDateTime startDate, LocalDateTime endDate);
 
-    Event getEvent(long id);
+    Event findEvent(long id);
 
     void createEvent(Event event);
 
@@ -19,6 +19,6 @@ public interface EventRepository {
 
     void deleteEvent(Event event);
 
-    void deleteEventById(long id);
+    void deleteEvent(long id);
 
 }

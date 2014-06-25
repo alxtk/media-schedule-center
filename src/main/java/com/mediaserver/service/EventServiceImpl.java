@@ -18,19 +18,19 @@ public class EventServiceImpl implements EventService {
     @Override
     @Transactional(readOnly = true)
     public List<Event> getEvents() {
-        return repository.getAllEvents();
+        return repository.findAllEvents();
     }
 
     @Override
     @Transactional(readOnly = true)
     public List<Event> getEvents(LocalDateTime startDate, LocalDateTime endDate) {
-        return repository.getEvents(startDate, endDate);
+        return repository.findEventsBetween(startDate, endDate);
     }
 
     @Override
     @Transactional(readOnly = true)
     public Event getEvent(long id) {
-        return repository.getEvent(id);
+        return repository.findEvent(id);
     }
 
     @Override
@@ -54,6 +54,6 @@ public class EventServiceImpl implements EventService {
     @Override
     @Transactional
     public void deleteEvent(long id) {
-        repository.deleteEventById(id);
+        repository.deleteEvent(id);
     }
 }

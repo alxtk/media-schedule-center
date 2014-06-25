@@ -3,7 +3,7 @@ package com.mediaserver.domain;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
+@Entity(name = "Events")
 public class Event {
 
     @Id
@@ -17,6 +17,7 @@ public class Event {
     @Column(name = "end_date")
     private LocalDateTime endDate;
 
+    @Column
     private String comment;
 
     //private int playlistId;
