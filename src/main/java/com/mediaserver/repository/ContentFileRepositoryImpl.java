@@ -25,7 +25,7 @@ public class ContentFileRepositoryImpl implements ContentFileRepository{
     public List<ContentFile> findContentFilesInPath(String path) {
         return sessionFactory.getCurrentSession()
                 .createCriteria(ContentFile.class)
-                .add(Restrictions.like("path", path))
+                .add(Restrictions.like("path", path + '%'))
                 .list();
     }
 

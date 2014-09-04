@@ -1,1 +1,12 @@
-File ammount : 0
+<script type="text/ng-template" id="content-file-manager-folder-template.html">
+    {{$parent.folder.path}}
+    <ul ng-if="$parent.folder.files || $parent.folder.folders">
+        <ul ng-if="$parent.folder.folders">
+            <li ng-repeat="folder in $parent.folder.folders" ng-include="'content-file-manager-folder-template.html'"></li>
+        </ul>
+        <li ng-repeat="file in $parent.folder.files">{{file.path}}</li>
+    </ul>
+</script>
+<ul>
+    <li ng-repeat="folder in root" ng-include="'content-file-manager-folder-template.html'"></li>
+</ul>

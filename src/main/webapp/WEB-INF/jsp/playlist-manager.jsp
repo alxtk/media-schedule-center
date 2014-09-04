@@ -12,8 +12,11 @@
 <body>
 <div role="main">
     <div class="container-fluid" ng-controller="Controller">
-        <p>Sucks = {{sucks}}</p>
-        <content-file-manager <%--root-folder="'/testSubFolder'"--%>></content-file-manager>
+        <div class="col-lg-4">
+            <ul>
+                <li><a href="./edit/1">Playlist #1</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 
@@ -22,9 +25,5 @@
 <script src="/js/angular.debug.js"></script>
 
 <script src="/js/ui-bootstrap-tpls-0.10.0.min.js"></script>
-
-<script src="/js/directives/dxTree.js"></script>
-<script src="/js/directives/content-file-manager.js"></script>
-<script src="/js/content-file/demo-content-file-manager.js"></script>
 </body>
 </html>

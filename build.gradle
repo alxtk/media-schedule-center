@@ -68,4 +68,8 @@ dependencies {
     compile 'com.google.guava:guava:17.0'
     compile 'org.springframework:spring-orm:4.0.0.RC2'
     compile 'org.hibernate:hibernate-core:4.3.5.Final'
+    compile 'javax.servlet:jstl:1.2'
+    compile "org.apache.tomcat:tomcat-jsp-api"
+
+
 }
